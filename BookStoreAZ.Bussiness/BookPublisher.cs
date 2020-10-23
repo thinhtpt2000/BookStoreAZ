@@ -1,11 +1,11 @@
-﻿using BookStoreAZ.Bussiness.BusinessRules;
+﻿using BookStoreAZ.Business.BusinessRules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreAZ.Bussiness
+namespace BookStoreAZ.Business
 {
     public class BookPublisher : BusinessObject
     {

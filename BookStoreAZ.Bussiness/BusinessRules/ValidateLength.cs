@@ -1,4 +1,4 @@
-﻿namespace BookStoreAZ.Bussiness.BusinessRules
+﻿namespace BookStoreAZ.Business.BusinessRules
 {
     internal class ValidateLength : BusinessRule
     {

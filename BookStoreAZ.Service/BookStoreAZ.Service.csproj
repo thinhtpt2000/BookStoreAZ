@@ -41,17 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookStoreAZ.Bussiness\BookStoreAZ.Bussiness.csproj">
+    <ProjectReference Include="..\BookStoreAZ.Bussiness\BookStoreAZ.Business.csproj">
       <Project>{3980ad9b-cf73-47f3-b653-485910df31db}</Project>
-      <Name>BookStoreAZ.Bussiness</Name>
+      <Name>BookStoreAZ.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\BookStoreAZ.Data\BookStoreAZ.Data.csproj">
       <Project>{672400bb-e517-44f3-9efe-b6f2ec5211e4}</Project>
       <Name>BookStoreAZ.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

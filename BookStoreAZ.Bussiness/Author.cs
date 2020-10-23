@@ -1,8 +1,8 @@
-﻿using BookStoreAZ.Bussiness.BusinessRules;
+﻿using BookStoreAZ.Business.BusinessRules;
 using System;
 using System.Collections.Generic;
 
-namespace BookStoreAZ.Bussiness
+namespace BookStoreAZ.Business
 {
     public class Author : BusinessObject
     {

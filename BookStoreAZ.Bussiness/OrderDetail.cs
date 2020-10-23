@@ -1,6 +1,6 @@
-﻿using BookStoreAZ.Bussiness.BusinessRules;
+﻿using BookStoreAZ.Business.BusinessRules;
 
-namespace BookStoreAZ.Bussiness
+namespace BookStoreAZ.Business
 {
     public class OrderDetail : BusinessObject
     {

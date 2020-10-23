@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreAZ.Bussiness.BusinessRules
+namespace BookStoreAZ.Business.BusinessRules
 {
     public class ValidateQuantity : BusinessRule
     {

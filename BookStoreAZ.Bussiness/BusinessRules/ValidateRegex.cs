@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace BookStoreAZ.Bussiness.BusinessRules
+namespace BookStoreAZ.Business.BusinessRules
 {
     public class ValidateRegex : BusinessRule
     {

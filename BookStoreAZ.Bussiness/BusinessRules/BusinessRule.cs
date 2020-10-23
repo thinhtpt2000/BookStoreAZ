@@ -1,4 +1,4 @@
-﻿namespace BookStoreAZ.Bussiness.BusinessRules
+﻿namespace BookStoreAZ.Business.BusinessRules
 {
     public abstract class BusinessRule
     {

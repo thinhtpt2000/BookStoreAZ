@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BookStoreAZ.Bussiness.BusinessRules
+namespace BookStoreAZ.Business.BusinessRules
 {
     public class ValidateRange : BusinessRule
     {
