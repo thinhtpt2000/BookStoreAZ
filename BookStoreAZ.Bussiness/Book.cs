@@ -34,8 +34,11 @@ namespace BookStoreAZ.Business
         public int Quantity { get; set; }
         public int Promotion { get; set; }
         public bool Status { get; set; }
+        public int CategoryID { get; set; }
+
         public Category Category { get; set; }
-        public IEnumerable<BookAuthor> BookAuthors { get; set; }
-        public IEnumerable<BookPublisher> BookPublishers { get; set; }
+        public virtual IEnumerable<BookAuthor> BookAuthors { get; set; }
+        public virtual IEnumerable<BookPublisher> BookPublishers { get; set; }
+        public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

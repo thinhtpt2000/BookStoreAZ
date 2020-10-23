@@ -9,11 +9,12 @@ namespace BookStoreAZ.Data
         static CategoryDao()
         {
             Mapper.CreateMap<Category, Business.Category>();
+            Mapper.CreateMap<Book, Business.Book>();
         }
 
         public List<Business.Category> GetCategories()
         {
-            using (var context = new BookStoreAZEntities())
+            using (var context = new Entities())
             {
                 var categories = context.Categories.ToList();
                 return Mapper.Map<List<Category>, List<Business.Category>>(categories);
@@ -22,7 +23,7 @@ namespace BookStoreAZ.Data
 
         public Business.Category GetCategoryByBook(int bookID)
         {
-            using (var context = new BookStoreAZEntities())
+            using (var context = new Entities())
             {
                 var book = context.Books.SingleOrDefault(p => p.ID == bookID);
                 var category = context.Categories.SingleOrDefault(c => c.ID == book.CategoryID);

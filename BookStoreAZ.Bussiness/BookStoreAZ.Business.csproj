@@ -48,6 +48,7 @@
     <Compile Include="BusinessObject.cs" />
     <Compile Include="BusinessRules\BusinessRule.cs" />
     <Compile Include="BusinessRules\ValidateEmail.cs" />
+    <Compile Include="BusinessRules\ValidateGuid.cs" />
     <Compile Include="BusinessRules\ValidateId.cs" />
     <Compile Include="BusinessRules\ValidateLength.cs" />
     <Compile Include="BusinessRules\ValidatePhone.cs" />

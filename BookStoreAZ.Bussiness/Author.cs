@@ -20,6 +20,7 @@ namespace BookStoreAZ.Business
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Country { get; set; }
-        public IEnumerable<BookAuthor> BookAuthors { get; set; }
+
+        public virtual IEnumerable<BookAuthor> BookAuthors { get; set; }
     }
 }

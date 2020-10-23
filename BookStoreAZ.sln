@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreAZ.Business", "BookStoreAZ.Bussiness\BookStoreAZ.Business.csproj", "{3980AD9B-CF73-47F3-B653-485910DF31DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreAZ.Service", "BookStoreAZ.Service\BookStoreAZ.Service.csproj", "{2CFDE6F2-5713-4001-BF40-E836EEC9FFB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreAZ.ActionService", "BookStoreAZ.Service\BookStoreAZ.ActionService.csproj", "{2CFDE6F2-5713-4001-BF40-E836EEC9FFB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreAZ.Data", "BookStoreAZ.Data\BookStoreAZ.Data.csproj", "{672400BB-E517-44F3-9EFE-B6F2EC5211E4}"
 EndProject

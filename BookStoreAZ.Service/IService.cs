@@ -1,7 +1,7 @@
 ﻿using BookStoreAZ.Business;
 using System.Collections.Generic;
 
-namespace BookStoreAZ.Service
+namespace BookStoreAZ.ActionService
 {
     public interface IService
     {

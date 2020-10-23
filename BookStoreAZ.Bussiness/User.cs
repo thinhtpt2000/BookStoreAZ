@@ -1,4 +1,5 @@
 ﻿using BookStoreAZ.Business.BusinessRules;
+using System.Collections.Generic;
 
 namespace BookStoreAZ.Business
 {
@@ -35,6 +36,8 @@ namespace BookStoreAZ.Business
         public string Phone { get; set; }
         public string Address { get; set; }
         public bool Status { get; set; }
-        public Role Role { get; set; }
+
+        public virtual IEnumerable<Order> Orders { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using BookStoreAZ.Data;
 using System.Collections.Generic;
 
-namespace BookStoreAZ.Service
+namespace BookStoreAZ.ActionService
 {
     public class Service : IService
     {

@@ -1,4 +1,6 @@
 ﻿using BookStoreAZ.Business.BusinessRules;
+using BookStoreAZ.Bussiness.BusinessRules;
+using System;
 
 namespace BookStoreAZ.Business
 {
@@ -16,16 +18,17 @@ namespace BookStoreAZ.Business
 
             AddRule(new ValidateId("BookID"));
 
-            AddRule(new ValidateId("OrderID"));
+            AddRule(new ValidateGuid("OrderID"));
         }
 
         public int ID { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
         public long SubTotal { get; set; }
-        public int OrderID { get; set; }
-        public Order Order { get; set; }
+        public Guid OrderID { get; set; }
         public int BookID { get; set; }
-        public Book Book { get; set; }
+
+        public virtual Order Order { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

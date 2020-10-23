@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -38,10 +37,10 @@
       <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -57,60 +56,60 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Author.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Book.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="BookAuthor.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="BookPublisher.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreAZ.Context.cs">
+    <Compile Include="BookStoreAZEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStoreAZ.Context.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreAZ.cs">
+    <Compile Include="BookStoreAZEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookStoreAZ.Designer.cs">
+    <Compile Include="BookStoreAZEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStoreAZ.edmx</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="CategoryDao.cs" />
     <Compile Include="DaoFactory.cs" />
     <Compile Include="ICategoryDao.cs" />
     <Compile Include="IDaoFactory.cs" />
+    <Compile Include="Member.cs">
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderDetail.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentMethod.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publisher.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>BookStoreAZ.tt</DependentUpon>
+      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,12 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="BookStoreAZ.edmx">
+    <EntityDeploy Include="BookStoreAZEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookStoreAZ.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookStoreAZEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BookStoreAZ.edmx.diagram">
-      <DependentUpon>BookStoreAZ.edmx</DependentUpon>
+    <None Include="BookStoreAZEntities.edmx.diagram">
+      <DependentUpon>BookStoreAZEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -134,24 +133,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BookStoreAZ.Context.tt">
+    <Content Include="BookStoreAZEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookStoreAZ.edmx</DependentUpon>
-      <LastGenOutput>BookStoreAZ.Context.cs</LastGenOutput>
+      <DependentUpon>BookStoreAZEntities.edmx</DependentUpon>
+      <LastGenOutput>BookStoreAZEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BookStoreAZ.tt">
+    <Content Include="BookStoreAZEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookStoreAZ.edmx</DependentUpon>
-      <LastGenOutput>BookStoreAZ.cs</LastGenOutput>
+      <DependentUpon>BookStoreAZEntities.edmx</DependentUpon>
+      <LastGenOutput>BookStoreAZEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

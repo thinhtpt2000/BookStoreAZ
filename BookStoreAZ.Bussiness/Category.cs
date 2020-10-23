@@ -21,6 +21,7 @@ namespace BookStoreAZ.Business
         public string Description { get; set; }
         public bool Status { get; set; }
         public DateTime CreateDate { get; set; }
-        public IEnumerable<Book> Books { set; get; }
+
+        public virtual IEnumerable<Book> Books { set; get; }
     }
 }

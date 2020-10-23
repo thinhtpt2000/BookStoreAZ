@@ -1,4 +1,5 @@
 ﻿using BookStoreAZ.Business.BusinessRules;
+using BookStoreAZ.Bussiness.BusinessRules;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +9,7 @@ namespace BookStoreAZ.Business
     {
         public Order()
         {
-            AddRule(new ValidateId("ID"));
+            AddRule(new ValidateGuid("ID"));
 
             AddRule(new ValidateRequired("CustomerName"));
             AddRule(new ValidateLength("CustomerName", 1, 256));
@@ -29,9 +30,8 @@ namespace BookStoreAZ.Business
             AddRule(new ValidateId("PaymentMethodID"));
         }
 
-        public int ID { get; set; }
-        public int CustomerID { get; set; }
-        public User User { get; set; }
+        public Guid ID { get; set; }
+        public int UserID { get; set; }
         public string CustomerName { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerPhone { get; set; }
@@ -39,7 +39,9 @@ namespace BookStoreAZ.Business
         public DateTime CreatedDate { get; set; }
         public long Total { get; set; }
         public int PaymentMethodID { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
-        public IEnumerable<OrderDetail> OrderDetails { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual PaymentMethod PaymentMethod { get; set; }
+        public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BookStoreAZ.Business.BusinessRules;
+using System.Collections.Generic;
 
 namespace BookStoreAZ.Business
 {
@@ -17,5 +18,7 @@ namespace BookStoreAZ.Business
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        public virtual IEnumerable<User> Users { get; set; }
     }
 }
