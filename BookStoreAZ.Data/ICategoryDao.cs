@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using BookStoreAZ.Business;
+using System.Collections.Generic;
 
 namespace BookStoreAZ.Data
 {
     public interface ICategoryDao
     {
-        List<Business.Category> GetCategories();
+        IEnumerable<Category> GetCategories();
 
-        Business.Category GetCategoryByBook(int bookID);
+        Category GetCategoryByBook(int bookID);
     }
 }

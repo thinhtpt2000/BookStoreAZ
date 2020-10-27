@@ -25,17 +25,14 @@ namespace BookStoreAZ.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<BookAuthor> BookAuthors { get; set; }
-        public virtual DbSet<BookPublisher> BookPublishers { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Member> Members { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
-        public virtual DbSet<Publisher> Publishers { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<AuthorEntity> AuthorEntities { get; set; }
+        public virtual DbSet<BookEntity> BookEntities { get; set; }
+        public virtual DbSet<CategoryEntity> CategoryEntities { get; set; }
+        public virtual DbSet<OrderDetailEntity> OrderDetailEntities { get; set; }
+        public virtual DbSet<OrderEntity> OrderEntities { get; set; }
+        public virtual DbSet<PaymentMethodEntity> PaymentMethodEntities { get; set; }
+        public virtual DbSet<PublisherEntity> PublisherEntities { get; set; }
+        public virtual DbSet<RoleEntity> RoleEntities { get; set; }
+        public virtual DbSet<UserEntity> UserEntities { get; set; }
     }
 }

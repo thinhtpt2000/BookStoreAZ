@@ -18,14 +18,14 @@ namespace BookStoreAZ.Business
 
             AddRule(new ValidateId("BookID"));
 
-            AddRule(new ValidateGuid("OrderID"));
+            //AddRule(new ValidateGuid("OrderID"));
         }
 
         public int ID { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
         public long SubTotal { get; set; }
-        public Guid OrderID { get; set; }
+        //public Guid OrderID { get; set; }
         public int BookID { get; set; }
 
         public virtual Order Order { get; set; }

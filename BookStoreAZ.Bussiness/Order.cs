@@ -27,18 +27,18 @@ namespace BookStoreAZ.Business
             AddRule(new ValidateRequired("Total"));
             AddRule(new ValidatePrice("Total"));
 
-            AddRule(new ValidateId("PaymentMethodID"));
+            //AddRule(new ValidateId("PaymentMethodID"));
         }
 
         public Guid ID { get; set; }
-        public int UserID { get; set; }
+        //public int UserID { get; set; }
         public string CustomerName { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerPhone { get; set; }
         public string CustomerNote { get; set; }
         public DateTime CreatedDate { get; set; }
         public long Total { get; set; }
-        public int PaymentMethodID { get; set; }
+        //public int PaymentMethodID { get; set; }
 
         public virtual User User { get; set; }
         public virtual PaymentMethod PaymentMethod { get; set; }

@@ -24,6 +24,8 @@ namespace BookStoreAZ.Business
 
             AddRule(new ValidateRequired("Quantity"));
             AddRule(new ValidateQuantity("Quantity"));
+
+            AddRule(new ValidateId("CategoryID"));
         }
 
         public int ID { get; set; }
@@ -34,11 +36,13 @@ namespace BookStoreAZ.Business
         public int Quantity { get; set; }
         public int Promotion { get; set; }
         public bool Status { get; set; }
-        public int CategoryID { get; set; }
 
-        public Category Category { get; set; }
-        public virtual IEnumerable<BookAuthor> BookAuthors { get; set; }
-        public virtual IEnumerable<BookPublisher> BookPublishers { get; set; }
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
+        public int AuthorID { get; set; }
+        public virtual Author Author { get; set; }
+        public int PublisherID { get; set; }
+        public virtual Publisher Publisher { get; set; }
         public virtual IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -5,28 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c0f68e1e9fb9431abb965c4c2dfb227c" Name="Diagram1">
-        <EntityTypeShape EntityType="BookStoreAZModel.Author" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.BookAuthor" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.BookPublisher" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Book" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Category" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Member" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.OrderDetail" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Order" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.PaymentMethod" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Publisher" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.Role" Width="1.5" PointX="1.5" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreAZModel.User" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
-        <AssociationConnector Association="BookStoreAZModel.FK_BookAuthors_Authors" ManuallyRouted="false" />
-        <AssociationConnector Association="BookStoreAZModel.FK_BookAuthors_Books" ManuallyRouted="false" />
-        <AssociationConnector Association="BookStoreAZModel.FK_BookPublisher_Books" ManuallyRouted="false" />
-        <AssociationConnector Association="BookStoreAZModel.FK_BookPublisher_Publishers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BookStoreAZModel.AuthorEntity" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.BookEntity" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.CategoryEntity" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.OrderDetailEntity" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.OrderEntity" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.PaymentMethodEntity" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.PublisherEntity" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.RoleEntity" Width="1.5" PointX="1.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreAZModel.UserEntity" Width="1.5" PointX="3.75" PointY="14.5" IsExpanded="true" />
         <AssociationConnector Association="BookStoreAZModel.FK_Books_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreAZModel.FK_OrderDetails_Books" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreAZModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreAZModel.FK_Orders_PaymentMethods" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreAZModel.FK_Orders_Users" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreAZModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="BookStoreAZModel.FK_Books_Authors" />
+        <AssociationConnector Association="BookStoreAZModel.FK_Books_Publishers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

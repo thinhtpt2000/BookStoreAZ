@@ -21,6 +21,6 @@ namespace BookStoreAZ.Business
         public DateTime DateOfBirth { get; set; }
         public string Country { get; set; }
 
-        public virtual IEnumerable<BookAuthor> BookAuthors { get; set; }
+        public virtual IEnumerable<Book> Books { get; set; }
     }
 }

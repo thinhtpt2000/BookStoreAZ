@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
 using BookStoreAZ.ActionService;
-using BookStoreAZ.Business;
-using BookStoreAZ.Web.Models;
+using BookStoreAZ.MVC.Models;
 using System.Web.Http;
 
-namespace BookStoreAZ.Web.Controllers
+namespace BookStoreAZ.MVC.Controllers
 {
     public class CategoryController : ApiController
     {
-        private IService service { get; set; }
+        private IService Service { get; set; }
 
         // static constructor. establishes Automapper object maps
 
@@ -16,7 +15,7 @@ namespace BookStoreAZ.Web.Controllers
         {
             //Mapper.CreateMap<Category, CategoryModel>()
             //    .ForMember(dest => dest.UnitPrice, opt => opt.MapFrom(src => string.Format("{0:C}", src.UnitPrice)));
-            Mapper.CreateMap<CategoryModel, Category>();
+            Mapper.CreateMap<CategoryModel, Business.Category>();
         }
 
         // default constructor
@@ -30,13 +29,13 @@ namespace BookStoreAZ.Web.Controllers
 
         public CategoryController(IService service)
         {
-            this.service = service;
+            this.Service = service;
         }
 
         [HttpGet]
-        public Category Get(int id)
+        public Business.Category Get(int id)
         {
-            return service.GetCategoryByBook(id);
+            return Service.GetCategoryByBook(id);
         }
     }
 }

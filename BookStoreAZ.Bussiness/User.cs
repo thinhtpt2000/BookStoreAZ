@@ -18,7 +18,7 @@ namespace BookStoreAZ.Business
             AddRule(new ValidateRequired("FullName"));
             AddRule(new ValidateLength("FullName", 1, 256));
 
-            AddRule(new ValidateId("RoleID"));
+            //AddRule(new ValidateId("RoleID"));
 
             AddRule(new ValidateRequired("Phone"));
             AddRule(new ValidateLength("Phone", 1, 10));
@@ -32,7 +32,7 @@ namespace BookStoreAZ.Business
         public string Email { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }
-        public int RoleID { get; set; }
+        //public int RoleID { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
         public bool Status { get; set; }

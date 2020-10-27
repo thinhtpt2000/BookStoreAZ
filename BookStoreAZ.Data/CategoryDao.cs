@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BookStoreAZ.Business;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,27 +9,27 @@ namespace BookStoreAZ.Data
     {
         static CategoryDao()
         {
-            Mapper.CreateMap<Category, Business.Category>();
-            Mapper.CreateMap<Book, Business.Book>();
+            Mapper.CreateMap<CategoryEntity, Category>();
+            Mapper.CreateMap<BookEntity, Book>();
         }
 
-        public List<Business.Category> GetCategories()
+        public IEnumerable<Category> GetCategories()
         {
             using (var context = new Entities())
             {
-                var categories = context.Categories.ToList();
-                return Mapper.Map<List<Category>, List<Business.Category>>(categories);
+                var categories = context.CategoryEntities.ToList();
+                return Mapper.Map<List<CategoryEntity>, List<Category>>(categories);
             }
         }
 
-        public Business.Category GetCategoryByBook(int bookID)
+        public Category GetCategoryByBook(int bookID)
         {
             using (var context = new Entities())
             {
-                var book = context.Books.SingleOrDefault(p => p.ID == bookID);
-                var category = context.Categories.SingleOrDefault(c => c.ID == book.CategoryID);
+                var book = context.BookEntities.SingleOrDefault(p => p.ID == bookID);
+                var category = context.CategoryEntities.SingleOrDefault(c => c.ID == book.CategoryID);
 
-                return Mapper.Map<Category, Business.Category>(category);
+                return Mapper.Map<CategoryEntity, Category>(category);
             }
         }
     }

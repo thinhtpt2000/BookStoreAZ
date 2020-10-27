@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BookStoreAZ.Web
+namespace BookStoreAZ.MVC
 {
     public class RouteConfig
     {

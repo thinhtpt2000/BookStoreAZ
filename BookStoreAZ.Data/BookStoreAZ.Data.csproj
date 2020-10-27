@@ -55,16 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Author.cs">
+    <Compile Include="AuthorDao.cs" />
+    <Compile Include="AuthorEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs">
-      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BookAuthor.cs">
-      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BookPublisher.cs">
+    <Compile Include="BookDao.cs" />
+    <Compile Include="BookEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="BookStoreAZEntities.Context.cs">
@@ -82,33 +78,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookStoreAZEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Category.cs">
+    <Compile Include="CategoryDao.cs" />
+    <Compile Include="CategoryEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="CategoryDao.cs" />
     <Compile Include="DaoFactory.cs" />
+    <Compile Include="IAuthorDao.cs" />
+    <Compile Include="IBookDao.cs" />
     <Compile Include="ICategoryDao.cs" />
     <Compile Include="IDaoFactory.cs" />
-    <Compile Include="Member.cs">
+    <Compile Include="IPublisherDao.cs" />
+    <Compile Include="OrderDetailEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs">
+    <Compile Include="OrderEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetail.cs">
-      <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PaymentMethod.cs">
+    <Compile Include="PaymentMethodEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publisher.cs">
+    <Compile Include="PublisherDao.cs" />
+    <Compile Include="PublisherEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Role.cs">
+    <Compile Include="RoleEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
+    <Compile Include="UserEntity.cs">
       <DependentUpon>BookStoreAZEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
