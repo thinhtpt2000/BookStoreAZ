@@ -7,11 +7,11 @@ using System.Web.Mvc;
 
 namespace BookStoreAZ.MVC.Controllers
 {
-    public class BookManagementController : Controller
+    public class BookController : Controller
     {
         private IService Service { get; set; }
 
-        static BookManagementController()
+        static BookController()
         {
             Mapper.CreateMap<Book, BookModel>();
             Mapper.CreateMap<BookModel, Book>();
@@ -23,11 +23,11 @@ namespace BookStoreAZ.MVC.Controllers
             Mapper.CreateMap<CategoryModel, Category>();
         }
 
-        public BookManagementController() : this(new Service())
+        public BookController() : this(new Service())
         {
         }
 
-        public BookManagementController(IService service)
+        public BookController(IService service)
         {
             this.Service = service;
         }
@@ -43,7 +43,7 @@ namespace BookStoreAZ.MVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult Book(int id)
+        public ActionResult AddOrEditBook(int id = 0)
         {
             BookModel bookModel;
 
@@ -57,6 +57,7 @@ namespace BookStoreAZ.MVC.Controllers
             else
             {
                 bookModel = new BookModel();
+                bookModel.Status = true;
                 ViewBag.Title = "Add Book";
             }
 
@@ -76,7 +77,7 @@ namespace BookStoreAZ.MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Book(BookModel model)
+        public ActionResult AddOrEditBook(BookModel model)
         {
             if (ModelState.IsValid)
             {

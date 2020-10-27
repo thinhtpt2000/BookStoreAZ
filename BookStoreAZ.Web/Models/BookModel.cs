@@ -26,20 +26,23 @@ namespace BookStoreAZ.MVC.Models
         [Required]
         public int Quantity { get; set; }
 
-        public int? Promotion { get; set; }
+        public int Promotion { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         [Display(Name = "Book Category")]
         public int CategoryID { get; set; }
         [NotMapped]
         public IEnumerable<CategoryModel> Categories { get; set; }
 
+        [Display(Name = "Book Author")]
         public int AuthorID { get; set; }
+        [NotMapped]
         public IEnumerable<AuthorModel> Authors { get; set; }
 
-
+        [Display(Name = "Book Publisher")]
         public int PublisherID { get; set; }
+        [NotMapped]
         public IEnumerable<PublisherModel> Publishers { get; set; }
     }
 }

@@ -146,7 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\BookManagementController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,6 +175,7 @@
     <Content Include="Content\js\demo\datatables-demo.js" />
     <Content Include="Content\js\sb-admin-2.js" />
     <Content Include="Content\js\sb-admin-2.min.js" />
+    <Content Include="Content\js\upload-image.js" />
     <Content Include="Content\vendor\chart.js\Chart.bundle.js" />
     <Content Include="Content\vendor\chart.js\Chart.bundle.min.js" />
     <Content Include="Content\vendor\chart.js\Chart.js" />
@@ -1997,7 +1998,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\BookManagement\Index.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Layout\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -2010,7 +2011,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\BookManagement\Book.cshtml" />
+    <Content Include="Views\Book\AddOrEditBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
