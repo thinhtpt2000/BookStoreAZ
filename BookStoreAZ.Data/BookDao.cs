@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookStoreAZ.Business;
+using X.PagedList;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,12 +24,14 @@ namespace BookStoreAZ.Data
             }
         }
 
-        public IEnumerable<Book> GetBooks()
+        public IPagedList<Book> GetBooks(int pageNumber = 1, int pageSize = 10)
         {
             using (var context = new Entities())
             {
-                var books = context.BookEntities.ToList();
-                return Mapper.Map<List<BookEntity>, List<Book>>(books);
+                var bookEntities = context.BookEntities;
+                var pagedBooks = bookEntities.OrderBy(b => b.ID).ToPagedList(pageNumber, pageSize);
+                var books = Mapper.Map<IEnumerable<BookEntity>, IEnumerable<Book>>(pagedBooks.ToArray());
+                return new StaticPagedList<Book>(books, pagedBooks.GetMetaData());
             }
         }
 
@@ -62,9 +65,8 @@ namespace BookStoreAZ.Data
                 bookEntity.Promotion = book.Promotion;
                 bookEntity.Status = book.Status;
 
-                //context.Members.Attach(entity); 
+                //context.Members.Attach(entity);
                 context.SaveChanges();
-
             }
         }
     }

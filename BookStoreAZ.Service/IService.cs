@@ -1,4 +1,5 @@
 ﻿using BookStoreAZ.Business;
+using X.PagedList;
 using System.Collections.Generic;
 
 namespace BookStoreAZ.ActionService
@@ -9,9 +10,12 @@ namespace BookStoreAZ.ActionService
 
         Category GetCategoryByBook(int bookID);
 
-        IEnumerable<Book> GetBooks();
+        IPagedList<Book> GetBooks(int pageNumber = 1, int pageSize = 10);
+
         Book GetBook(int bookID);
+
         void UpdateBook(Book book);
+
         void InsertBook(Book book);
 
         IEnumerable<Publisher> GetPublishers();

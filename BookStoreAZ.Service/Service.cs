@@ -1,5 +1,6 @@
 ﻿using BookStoreAZ.Business;
 using BookStoreAZ.Data;
+using X.PagedList;
 using System.Collections.Generic;
 
 namespace BookStoreAZ.ActionService
@@ -23,9 +24,9 @@ namespace BookStoreAZ.ActionService
             return bookDao.GetBook(bookID);
         }
 
-        public IEnumerable<Book> GetBooks()
+        public IPagedList<Book> GetBooks(int pageNumber = 1, int pageSize = 10)
         {
-            return bookDao.GetBooks();
+            return bookDao.GetBooks(pageNumber, pageSize);
         }
 
         public IEnumerable<Category> GetCategories()

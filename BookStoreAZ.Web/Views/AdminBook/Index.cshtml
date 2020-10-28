@@ -1,0 +1,101 @@
+﻿@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Common;
+
+@model BookStoreAZ.MVC.Models.BooksModel
+
+@{
+    ViewBag.Title = "Manage Book";
+    Layout = "~/Views/Layout/_AdminLayout.cshtml";
+}
+
+<h3>Book Management</h3>
+
+
+@if (@Model.Message != null)
+{
+    <div class="alert alert-primary col-md-6 mx-auto" role="alert">
+        @Model.Message
+    </div>
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered"
+               width="100%"
+               cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th class="text-center">Image</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th class="text-center">Image</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-right">Action</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var book in Model.Books)
+                {
+                    <tr>
+                        <td>@book.Name</td>
+                        <td>@book.Description</td>
+                        <td class="text-center">
+                            <img src="@book.Image" width="150" />
+                        </td>
+                        <td class="text-right">
+                            @book.Price
+                        </td>
+                        <td class="text-center">@book.Quantity</td>
+                        <td class="text-right">
+                            <a class="btn btn-primary" href="~/Admin/ManageBook/@book.ID">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            Page @(Model.Books.PageCount < Model.Books.PageNumber ? 0 : Model.Books.PageNumber) of @Model.Books.PageCount
+        </div>
+        <div class="col-md-6">
+            @Html.PagedListPager(
+                    Model.Books,
+                    page => Url.Action("Index",
+                                        "AdminBook",
+                                        new { page }
+                                        ),
+                    new PagedListRenderOptions
+                    {
+                        DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+                        DisplayLinkToLastPage = PagedListDisplayMode.Always,
+                        DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,
+                        DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded,
+
+                        UlElementClasses = new string[] { "pagination", "justify-content-end" },
+                        LiElementClasses = new string[] { "page-item" },
+                        PageClasses = new string[] { "page-link" },
+
+                        LinkToFirstPageFormat = "<i class='fas fa-fast-backward'></i>",
+                        LinkToLastPageFormat = "<i class='fas fa-fast-forward'></i>",
+                        LinkToPreviousPageFormat = "<i class='fas fa-backward'></i>",
+                        LinkToNextPageFormat = "<i class='fas fa-forward'></i>"
+
+                    }
+                )
+        </div>
+    </div>
+</div>

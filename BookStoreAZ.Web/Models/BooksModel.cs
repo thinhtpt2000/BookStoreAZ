@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using X.PagedList;
 
 namespace BookStoreAZ.MVC.Models
 {
@@ -9,8 +6,6 @@ namespace BookStoreAZ.MVC.Models
     {
         public string Message { get; set; }
 
-        // sortable list of members
-
-        public IEnumerable<BookModel> Books { get; set; }
+        public IPagedList<BookModel> Books { get; set; }
     }
 }

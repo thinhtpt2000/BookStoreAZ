@@ -14,9 +14,9 @@ namespace BookStoreAZ.MVC
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute("", "Admin", new { controller = "Book", action = "Index" });
-            context.MapRoute("", "Admin/ManageBook", new { controller = "Book", action = "Index" });
-            context.MapRoute("", "Admin/ManageBook/{id}", new { controller = "Book", action = "AddOrEditBook" });
+            context.MapRoute("", "Admin", new { controller = "AdminBook", action = "Index" });
+            context.MapRoute("", "Admin/ManageBook", new { controller = "AdminBook", action = "Index" });
+            context.MapRoute("", "Admin/ManageBook/{id}", new { controller = "AdminBook", action = "AddOrEditBook" });
         }
     }
 }

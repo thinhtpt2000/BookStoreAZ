@@ -2,16 +2,28 @@
 using BookStoreAZ.ActionService;
 using BookStoreAZ.Business;
 using BookStoreAZ.MVC.Models;
+using X.PagedList;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace BookStoreAZ.MVC.Controllers
 {
-    public class BookController : Controller
+    //public class PagedListConverter : ITypeConverter<IEnumerable<Book>, PagedList<BookModel>>
+    //{
+    //    public PagedList<BookModel> Convert(ResolutionContext context)
+    //    {
+    //        var source = (IEnumerable<Book>)context.SourceValue;
+    //        var dest = source.Select(b => Mapper.Map<Book, BookModel>(b)).ToList();
+    //        return new PagedList<BookModel>(dest, models.PageIndex, models.PageSize);
+    //    }
+    //}
+
+    public class AdminBookController : Controller
     {
         private IService Service { get; set; }
 
-        static BookController()
+        static AdminBookController()
         {
             Mapper.CreateMap<Book, BookModel>();
             Mapper.CreateMap<BookModel, Book>();
@@ -23,22 +35,22 @@ namespace BookStoreAZ.MVC.Controllers
             Mapper.CreateMap<CategoryModel, Category>();
         }
 
-        public BookController() : this(new Service())
+        public AdminBookController() : this(new Service())
         {
         }
 
-        public BookController(IService service)
+        public AdminBookController(IService service)
         {
             this.Service = service;
         }
 
         // GET: BookManagement
-        public ActionResult Index(string message = null)
+        public ActionResult Index(int page = 1, string message = null)
         {
             var model = new BooksModel { Message = message };
-
-            var books = Service.GetBooks();
-            model.Books = Mapper.Map<IEnumerable<Book>, IEnumerable<BookModel>>(books);
+            var pagedBooks = Service.GetBooks(page);
+            var books = Mapper.Map<IEnumerable<Book>, IEnumerable<BookModel>>(pagedBooks.ToArray());
+            model.Books = new StaticPagedList<BookModel>(books, pagedBooks.GetMetaData());
             return View(model);
         }
 
@@ -87,12 +99,12 @@ namespace BookStoreAZ.MVC.Controllers
                 if (book.ID > 0)
                 {
                     Service.UpdateBook(book);
-                    message = "Member successfully updated";
+                    message = "Book successfully updated";
                 }
                 else
                 {
                     Service.InsertBook(book);
-                    message = "Member successfully added";
+                    message = "Book successfully added";
                 }
                 return RedirectToAction("Index", new { message = message });
             }
