@@ -17,7 +17,7 @@ namespace BookStoreAZ.Data
         {
             using (var context = new Entities())
             {
-                var categories = context.CategoryEntities.ToList();
+                var categories = context.CategoryEntities.Where(c => c.Status == true).ToList();
                 return Mapper.Map<List<CategoryEntity>, List<Category>>(categories);
             }
         }
