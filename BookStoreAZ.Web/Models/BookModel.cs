@@ -9,21 +9,23 @@ namespace BookStoreAZ.MVC.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
-        [MaxLength(256)]
+        [MaxLength(256, ErrorMessage = "Name must be less than 256 chars")]
         [Display(Name = "Book Name")]
         public string Name { get; set; }
 
-        [Required]
-        [MaxLength(500)]
+        [Required(ErrorMessage = "Description is required")]
+        [MaxLength(500, ErrorMessage = "Description must be less than 500 chars")]
         public string Description { get; set; }
 
         [MaxLength(256)]
         public string Image { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Price is required")]
+        [Range(1000, int.MaxValue, ErrorMessage = "Price must be greater than 0.")]
         public int Price { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Quantity is required")]
+        [Range(0, int.MaxValue, ErrorMessage = "Quantity must be greater than or equal 0.")]
         public int Quantity { get; set; }
 
         public int Promotion { get; set; }
