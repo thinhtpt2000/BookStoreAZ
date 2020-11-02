@@ -44,6 +44,11 @@ namespace BookStoreAZ.ActionService
             return publisherDao.GetPublishers();
         }
 
+        public int InsertAuthor(Author author)
+        {
+            return authorDao.InsertAuthor(author);
+        }
+
         public void InsertBook(Book book)
         {
             bookDao.InsertBook(book);

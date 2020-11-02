@@ -23,5 +23,7 @@ namespace BookStoreAZ.ActionService
         IEnumerable<Publisher> GetPublishers();
 
         IEnumerable<Author> GetAuthors();
+
+        int InsertAuthor(Author author);
     }
 }
