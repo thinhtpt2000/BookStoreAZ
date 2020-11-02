@@ -10,6 +10,8 @@ namespace BookStoreAZ.ActionService
 
         Category GetCategoryByBook(int bookID);
 
+        int InsertCategory(Category category);
+
         IPagedList<Book> GetBooks(int pageNumber = 1, int pageSize = 10);
 
         Book GetBook(int bookID);

@@ -9,16 +9,6 @@ using System.Web.Mvc;
 
 namespace BookStoreAZ.MVC.Controllers
 {
-    //public class PagedListConverter : ITypeConverter<IEnumerable<Book>, PagedList<BookModel>>
-    //{
-    //    public PagedList<BookModel> Convert(ResolutionContext context)
-    //    {
-    //        var source = (IEnumerable<Book>)context.SourceValue;
-    //        var dest = source.Select(b => Mapper.Map<Book, BookModel>(b)).ToList();
-    //        return new PagedList<BookModel>(dest, models.PageIndex, models.PageSize);
-    //    }
-    //}
-
     public class AdminBookController : Controller
     {
         private IService Service { get; set; }
@@ -57,7 +47,8 @@ namespace BookStoreAZ.MVC.Controllers
         [HttpGet]
         public ActionResult AddOrEditBook(int id = 0)
         {
-            BookModel bookModel;
+            NewBookModel model = new NewBookModel();
+            BookModel bookModel = new BookModel();
 
             var book = Service.GetBook(id);
 
@@ -68,7 +59,6 @@ namespace BookStoreAZ.MVC.Controllers
             }
             else
             {
-                bookModel = new BookModel();
                 bookModel.Status = true;
                 ViewBag.Title = "Add Book";
             }
@@ -85,16 +75,17 @@ namespace BookStoreAZ.MVC.Controllers
             IEnumerable<AuthorModel> authorModel = Mapper.Map<IEnumerable<Author>, IEnumerable<AuthorModel>>(authors);
             bookModel.Authors = authorModel;
 
-            return View(bookModel);
+            model.Book = bookModel;
+
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult AddOrEditBook(BookModel model)
+        public ActionResult AddOrEditBook(NewBookModel newModel)
         {
             if (ModelState.IsValid)
             {
-                var book = Mapper.Map<BookModel, Book>(model);
-                System.Console.WriteLine(book.CategoryID);
+                var book = Mapper.Map<BookModel, Book>(newModel.Book);
                 string message;
                 if (book.ID > 0)
                 {
@@ -112,17 +103,17 @@ namespace BookStoreAZ.MVC.Controllers
             {
                 var categories = Service.GetCategories();
                 IEnumerable<CategoryModel> categoryModel = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryModel>>(categories);
-                model.Categories = categoryModel;
+                newModel.Book.Categories = categoryModel;
 
                 var publishers = Service.GetPublishers();
                 IEnumerable<PublisherModel> publisherModel = Mapper.Map<IEnumerable<Publisher>, IEnumerable<PublisherModel>>(publishers);
-                model.Publishers = publisherModel;
+                newModel.Book.Publishers = publisherModel;
 
                 var authors = Service.GetAuthors();
                 IEnumerable<AuthorModel> authorModel = Mapper.Map<IEnumerable<Author>, IEnumerable<AuthorModel>>(authors);
-                model.Authors = authorModel;
+                newModel.Book.Authors = authorModel;
             }
-            return View(model);
+            return View(newModel);
         }
     }
 }

@@ -8,5 +8,7 @@ namespace BookStoreAZ.Data
         IEnumerable<Category> GetCategories();
 
         Category GetCategoryByBook(int bookID);
+
+        int InsertCategory(Category category);
     }
 }

@@ -17,6 +17,7 @@ namespace BookStoreAZ.MVC
             context.MapRoute("", "Admin", new { controller = "AdminBook", action = "Index" });
             context.MapRoute("", "Admin/ManageBook", new { controller = "AdminBook", action = "Index" });
             context.MapRoute("", "Admin/ManageBook/{id}", new { controller = "AdminBook", action = "AddOrEditBook" });
+            context.MapRoute("", "Admin/ManageCategory/{id}", new { controller = "AdminCategory", action = "AddOrEditCategory" });
         }
     }
 }

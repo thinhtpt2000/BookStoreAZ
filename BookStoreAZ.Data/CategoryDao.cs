@@ -10,6 +10,7 @@ namespace BookStoreAZ.Data
         static CategoryDao()
         {
             Mapper.CreateMap<CategoryEntity, Category>();
+            Mapper.CreateMap<Category, CategoryEntity>();
             Mapper.CreateMap<BookEntity, Book>();
         }
 
@@ -30,6 +31,18 @@ namespace BookStoreAZ.Data
                 var category = context.CategoryEntities.SingleOrDefault(c => c.ID == book.CategoryID);
 
                 return Mapper.Map<CategoryEntity, Category>(category);
+            }
+        }
+
+        public int InsertCategory(Category category)
+        {
+            using (var context = new Entities())
+            {
+                var categoryEntity = Mapper.Map<Category, CategoryEntity>(category);
+                context.CategoryEntities.Add(categoryEntity);
+                context.SaveChanges();
+                category.ID = categoryEntity.ID;
+                return category.ID;
             }
         }
     }

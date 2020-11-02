@@ -17,6 +17,7 @@ namespace BookStoreAZ.MVC.Models
         [MaxLength(500, ErrorMessage = "Description must be less than 500 chars")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Image is required")]
         [MaxLength(256)]
         public string Image { get; set; }
 
