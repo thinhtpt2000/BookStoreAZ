@@ -328,6 +328,7 @@
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminBookController.cs" />
+    <Compile Include="Controllers\AdminPublisherController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2199,6 +2200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminPublisher\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookStoreAZ.Bussiness\BookStoreAZ.Business.csproj">

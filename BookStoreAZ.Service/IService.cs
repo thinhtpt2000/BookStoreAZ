@@ -21,6 +21,7 @@ namespace BookStoreAZ.ActionService
         void InsertBook(Book book);
 
         IEnumerable<Publisher> GetPublishers();
+        int InsertPublisher(Publisher publisher);
 
         IEnumerable<Author> GetAuthors();
 

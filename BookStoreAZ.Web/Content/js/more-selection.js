@@ -9,6 +9,16 @@
         $('#form-author-modal').modal('show');
     });
 
+    $('#add-more-author').on('click', function (event) {
+        event.preventDefault();
+        $('#form-author-modal').modal('show');
+    });
+
+    $('#add-more-publisher').on('click', function (event) {
+        event.preventDefault();
+        $('#form-publisher-modal').modal('show');
+    });
+
     $('#category-form').on('submit', function (event) {
         event.preventDefault();
         let dataString = new FormData($('#category-form').get(0));
@@ -57,6 +67,28 @@
             }
         });
     });
+
+    $('#publisher-form').on('submit', function (event) {
+        event.preventDefault();
+        let dataString = new FormData($('#publisher-form').get(0));
+        let contentType = false;
+        let processData = false;
+        let action = $('#publisher-form').attr("action");
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: dataString,
+            dataType: "json",
+            contentType: contentType,
+            processData: processData,
+            success: function (result) {
+                onAddPublisherSucess(result);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("An error occurs while inserting new publisher");
+            }
+        });
+    });
 });
 
 let onAddCategorySucess = function (result) {
@@ -77,5 +109,16 @@ let onAddAuthorSucess = function (result) {
         $('#Book_AuthorID').append(option);
         $('#Book_AuthorID').val(result.ID);
         $('#form-author-modal').modal('hide');
+    }
+}
+
+let onAddPublisherSucess = function (result) {
+    if (result.EnableError) {
+        alert(result.ErrorMsg);
+    } else if (result.EnableSuccess) {
+        let option = new Option(result.Name, result.ID);
+        $('#Book_PublisherID').append(option);
+        $('#Book_PublisherID').val(result.ID);
+        $('#form-publisher-modal').modal('hide');
     }
 }

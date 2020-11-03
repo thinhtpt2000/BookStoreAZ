@@ -59,6 +59,11 @@ namespace BookStoreAZ.ActionService
             return categoryDao.InsertCategory(category);
         }
 
+        public int InsertPublisher(Publisher publisher)
+        {
+            return publisherDao.InsertPublisher(publisher);
+        }
+
         public void UpdateBook(Book book)
         {
             bookDao.UpdateBook(book);
